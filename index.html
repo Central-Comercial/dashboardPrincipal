@@ -846,23 +846,19 @@ const ARIS_DATA=[
   {hunter:'ALICIA QUINONES',cuenta:'MAURO MARTIN MEYERS',lic:1,val:60,col:'#FF8C42',est:'CERRADO'},
   {hunter:'ROSA TORRES',cuenta:'WINES OF PERU',lic:4,val:240,col:'#6BCF7F',est:'CERRADO'},
   {hunter:'PATRICIA ASTORGA',cuenta:'MRJ EVENTS',lic:10,val:709,col:'#00E5A0',est:'CERRADO'},
-  {hunter:'OLIVER LOPEZ',cuenta:'SOFINETT SAC',lic:1,val:60,col:'#4ECDC4',est:'PRE CIERRE'},
-  {hunter:'OLIVER LOPEZ',cuenta:'UNIFOOD',lic:5,val:300,col:'#4ECDC4',est:'PRE CIERRE'},
-  {hunter:'CRISTIAN HUAMAN',cuenta:'SPA DE LA PIEL',lic:1,val:60,col:'#00C9FF',est:'PRE CIERRE'},
-  {hunter:'OLIVER LOPEZ',cuenta:'ALIMENTOS ILHE S.A.C.',lic:2,val:120,col:'#4ECDC4',est:'PRE CIERRE'},
-  {hunter:'ALICIA QUINONES',cuenta:'hildago jesus elizabeth',lic:1,val:60,col:'#FF8C42',est:'PRE CIERRE'},
-  {hunter:'ANALIZ CASTILLO',cuenta:'GANGSTA PERU SAC',lic:5,val:300,col:'#F59E0B',est:'PRE CIERRE'},
+  {hunter:'OLIVER LOPEZ',cuenta:'SOFINETT SAC',lic:1,val:60,col:'#4ECDC4',est:'CERRADO'},
+  {hunter:'CRISTIAN HUAMAN',cuenta:'SPA DE LA PIEL',lic:1,val:60,col:'#00C9FF',est:'CERRADO'},
 ];
 const ARIS_BY_HUNTER=[
   {n:'PATRICIA ASTORGA',ini:'PA',col:'#00E5A0',val:709,lic:10,meta:240},
-  {n:'OLIVER LOPEZ',ini:'OL',col:'#4ECDC4',val:540,lic:9,meta:240},
-  {n:'ANALIZ CASTILLO',ini:'AC',col:'#F59E0B',val:420,lic:7,meta:240},
   {n:'LEONARDO TELLO',ini:'LT',col:'#8B5CF6',val:289,lic:3,meta:180},
   {n:'ROSA TORRES',ini:'RT',col:'#6BCF7F',val:240,lic:4,meta:240},
   {n:'MARIA FLORES',ini:'MF',col:'#EC4899',val:180,lic:3,meta:180},
-  {n:'ALICIA QUINONES',ini:'AQ',col:'#FF8C42',val:120,lic:2,meta:240},
+  {n:'OLIVER LOPEZ',ini:'OL',col:'#4ECDC4',val:120,lic:2,meta:240},
+  {n:'ANALIZ CASTILLO',ini:'AC',col:'#F59E0B',val:120,lic:2,meta:240},
   {n:'CRISTIAN HUAMAN',ini:'CH',col:'#00C9FF',val:120,lic:2,meta:180},
   {n:'MELISA LLACCHUAS',ini:'ML',col:'#FF6B9D',val:60,lic:1,meta:240},
+  {n:'ALICIA QUINONES',ini:'AQ',col:'#FF8C42',val:60,lic:1,meta:240},
   {n:'MELISSA VASQUEZ',ini:'MV',col:'#FF6B6B',val:0,lic:0,meta:240},
   {n:'ANDREA SOTO',ini:'AS',col:'#FFD93D',val:0,lic:0,meta:240},
   {n:'YASMIN CHECA',ini:'YC',col:'#888780',val:0,lic:0,meta:180},
@@ -1408,14 +1404,14 @@ const HUNTER_TIPOS={
 
 const ARIS_MAYO=[
   {n:'PATRICIA ASTORGA',ini:'PA',col:'#00E5A0',tipo:'SENIOR',cuota:240,val:709,pct:295},
-  {n:'OLIVER LOPEZ',ini:'OL',col:'#4ECDC4',tipo:'SENIOR',cuota:240,val:540,pct:225},
-  {n:'ANALIZ CASTILLO',ini:'AC',col:'#F59E0B',tipo:'SENIOR',cuota:240,val:420,pct:175},
   {n:'LEONARDO TELLO',ini:'LT',col:'#8B5CF6',tipo:'JUNIOR',cuota:180,val:289,pct:161},
   {n:'ROSA TORRES',ini:'RT',col:'#6BCF7F',tipo:'SENIOR',cuota:240,val:240,pct:100},
   {n:'MARIA FLORES',ini:'MF',col:'#EC4899',tipo:'JUNIOR',cuota:180,val:180,pct:100},
-  {n:'ALICIA QUINONES',ini:'AQ',col:'#FF8C42',tipo:'SENIOR',cuota:240,val:120,pct:50},
+  {n:'OLIVER LOPEZ',ini:'OL',col:'#4ECDC4',tipo:'SENIOR',cuota:240,val:120,pct:50},
+  {n:'ANALIZ CASTILLO',ini:'AC',col:'#F59E0B',tipo:'SENIOR',cuota:240,val:120,pct:50},
   {n:'CRISTIAN HUAMAN',ini:'CH',col:'#00C9FF',tipo:'JUNIOR',cuota:180,val:120,pct:67},
   {n:'MELISA LLACCHUAS',ini:'ML',col:'#FF6B9D',tipo:'SENIOR',cuota:240,val:60,pct:25},
+  {n:'ALICIA QUINONES',ini:'AQ',col:'#FF8C42',tipo:'SENIOR',cuota:240,val:60,pct:25},
   {n:'MELISSA VASQUEZ',ini:'MV',col:'#FF6B6B',tipo:'SENIOR',cuota:240,val:0,pct:0},
   {n:'ANDREA SOTO',ini:'AS',col:'#FFD93D',tipo:'SENIOR',cuota:240,val:0,pct:0},
   {n:'YASMIN CHECA',ini:'YC',col:'#888780',tipo:'JUNIOR',cuota:180,val:0,pct:0},
@@ -2212,12 +2208,8 @@ const ARIS_TABLE_DATA=[
   {h:"ALICIA QUINONES",col:"#FF8C42",cuenta:"MAURO MARTIN MEYERS",est:"CERRADO",lic:1,val:60},
   {h:"ROSA TORRES",col:"#6BCF7F",cuenta:"WINES OF PERU",est:"CERRADO",lic:4,val:240},
   {h:"PATRICIA ASTORGA",col:"#00E5A0",cuenta:"MRJ EVENTS",est:"CERRADO",lic:10,val:709},
-  {h:"OLIVER LOPEZ",col:"#4ECDC4",cuenta:"SOFINETT SAC",est:"PRE CIERRE",lic:1,val:60},
-  {h:"OLIVER LOPEZ",col:"#4ECDC4",cuenta:"UNIFOOD",est:"PRE CIERRE",lic:5,val:300},
-  {h:"CRISTIAN HUAMAN",col:"#00C9FF",cuenta:"SPA DE LA PIEL",est:"PRE CIERRE",lic:1,val:60},
-  {h:"OLIVER LOPEZ",col:"#4ECDC4",cuenta:"ALIMENTOS ILHE S.A.C.",est:"PRE CIERRE",lic:2,val:120},
-  {h:"ALICIA QUINONES",col:"#FF8C42",cuenta:"hildago jesus elizabeth",est:"PRE CIERRE",lic:1,val:60},
-  {h:"ANALIZ CASTILLO",col:"#F59E0B",cuenta:"GANGSTA PERU SAC",est:"PRE CIERRE",lic:5,val:300},
+  {h:"OLIVER LOPEZ",col:"#4ECDC4",cuenta:"SOFINETT SAC",est:"CERRADO",lic:1,val:60},
+  {h:"CRISTIAN HUAMAN",col:"#00C9FF",cuenta:"SPA DE LA PIEL",est:"CERRADO",lic:1,val:60},
 ];
 
 
@@ -3441,11 +3433,11 @@ function updateKPICards(){
       cap_val:'S/.4,932,972', cap_pct:'131.9', cap_cuota:'S/.3.74M', cap_proy:'S/.4.933M',
       funnel_val:'S/.0', funnel_50:'79 cta · S/.5,005,000', funnel_75:'6 cta · S/.212,333',
       inc_val:'S/.5,217,333', inc_proy:'S/.5,217,333',
-      ruc_val:'34', ruc_pct:'81.0', ruc_cuota:'42', ruc_proy:'34',
+      ruc_val:'58', ruc_pct:'138.1', ruc_cuota:'42', ruc_proy:'58',
       fruc_val:'0', fruc_50:'0 cta', fruc_75:'0 cta',
       qr_val:'49', qr_pct:'116.7', qr_cuota:'42', qr_total:'49',
-      aris_val:'S/.1,778', aris_pct:'82.8', aris_cuota:'S/.3,234', aris_proy:'S/.2,678',
-      alic_val:'26 lic', alic_alta:'26 cerradas → S/.1,778', alic_sin:'15 lic sin alta → S/.900',
+      aris_val:'S/.1,898', aris_pct:'88.3', aris_cuota:'S/.3,234', aris_proy:'S/.1,898',
+      alic_val:'28 lic', alic_alta:'28 cerradas → S/.1,898', alic_sin:'0 lic sin alta → S/.0',
       cos_m1:'S/.3,219,938', cos_m2:'-S/.355,621', cos_m3:'-S/.399,167', cos_tot:'S/.2,465,150',
       qr_m1_val:'0', qr_m1_ge:'0', qr_m1_lt:'0',
       qr_m0_val:'49', qr_m0_ge:'19', qr_m0_lt:'30'
@@ -3523,7 +3515,7 @@ function updateKPICards(){
       +sm('Proy: '+d.ruc_proy+' RUC'))
     // 5. Ruc Proyectado M1
     +kpi('linear-gradient(90deg,#06B6D4,#3B82F6)','Ruc Proyectado',d.ruc_val,'#06B6D4',
-      sp('#06B6D4','M1: '+d.ruc_val+' RUC'))
+      sp('#06B6D4','M1: 0 RUC'))
     // 6. Funnel RUC
     +kpi('linear-gradient(90deg,#3B82F6,#22C55E)','Funnel RUC',d.fruc_val,'#3B82F6',
       sp('#3B82F6',d.fruc_50+' · 50%')
