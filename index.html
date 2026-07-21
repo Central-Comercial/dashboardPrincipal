@@ -276,7 +276,7 @@ canvas{display:block}
           <div id="cRucPotLgd" style="display:flex;justify-content:center;gap:12px;margin-top:6px;font-size:10px"></div>
         </div>
         <div class="panel">
-          <div class="ph"><div><div class="pt">RUC — Contribución por Equipo</div><div class="ps">Carlos 25 · Ana 22 · Total 47 · Dia 19 Julio</div></div></div>
+          <div class="ph"><div><div class="pt">RUC — Contribución por Equipo</div><div class="ps">Julio: C25/A22 · Funnel 50%: C29/A24 · 75%: C17/A7 · Dia 19</div></div></div>
           <div style="position:relative;height:190px"><canvas id="cRucTeam"></canvas></div>
         </div>
       </div>
@@ -315,7 +315,7 @@ canvas{display:block}
       <!-- Arisale 2 circles -->
       <div class="g3" style="margin-bottom:14px">
         <div class="panel">
-          <div class="ph"><div><div class="pt">Arisale — Estado Alta Sunat</div><div class="ps">Con alta: 12 · Sin alta: 13 · Total 25 lic · Dia 19</div></div></div>
+          <div class="ph"><div><div class="pt">Arisale — Estado Alta Sunat</div><div class="ps">Con alta: 40 · Sin alta: 0 · Total 40 lic · Dia 19 Julio</div></div></div>
           <div style="position:relative;height:200px"><canvas id="cArisEstado"></canvas></div>
           <div id="cArisEstadoLgd" style="display:flex;justify-content:center;gap:14px;margin-top:8px;font-size:10px"></div>
         </div>
@@ -341,7 +341,7 @@ canvas{display:block}
       <div class="panel" style="margin-bottom:14px">
         <div class="ph"><div>
           <div class="pt">Score % meta — Julio 2026</div>
-          <div class="ps">70% Captura + 10% RUC + 10% QR + 10% Arisale · Dia 19 Julio · 15 hunters</div>
+          <div class="ps">Captura 65% + RUC 15% + QR 7% + Arisale 7% + Planillas 6% · Dia 19 Julio · 17 hunters</div>
         </div></div>
         <div style="position:relative;height:280px"><canvas id="cSco"></canvas></div>
       </div>
@@ -1412,7 +1412,7 @@ const TRAJ2=[
 const fm=v=>{const a=Math.abs(v);const s=a>=1e6?(a/1e6).toFixed(2)+'M':a>=1000?(a/1000).toFixed(1)+'K':Math.round(a).toLocaleString();return(v<0?'-':'')+'S/.'+s};
 const clrS=s=>s>=80?'#00E5A0':s>=50?'#3B82F6':s>=25?'#F59E0B':'#EF4444';
 const clrP=p=>p>=100?'#00E5A0':p>=50?'#F59E0B':'#EF4444';
-var RANK_ABR_SCORES={"ALICIA QUINONES":199.5,"ANALIZ CASTILLO":188.3,"PATRICIA ASTORGA":145.9,"MELISA LLACCHUAS":122.9,"CRISTIAN HUAMAN":112.3,"OLIVER LOPEZ":111.2,"ROSA TORRES":107.3,"YASMIN CHECA":95.7,"MELISSA VASQUEZ":79.4,"ANA CARRERA":70.2,"ROCK LLANOS":51.8,"FRANCO ROUILLON":45.3,"ANDREA SOTO":29.2,"MARIA FLORES":21.3,"KEVIN PAULINO":0.0};
+var RANK_ABR_SCORES={"MELISSA VASQUEZ": 37.9, "MELISA LLACCHUAS": 64.2, "ROSA TORRES": 22.0, "ANDREA SOTO": 31.3, "YASMIN CHECA": 31.1, "MARIA FLORES": 103.2, "KEVIN PAULINO": 73.5, "LEONARDO TORRES": 108.6, "ALICIA QUINONES": 115.4, "OLIVER LOPEZ": 108.1, "PATRICIA ASTORGA": 165.1, "ANALIZ CASTILLO": 41.9, "ROCK LLANOS": 38.0, "FRANCO ROUILLON": 36.6, "CRISTIAN HUAMAN": 97.3, "JANNIOR SALAZAR": 75.9, "GIULIANA HERENA": 0.7, "ANA CARRERA": 0.0};
 
 
 const RANK_ABR_VALS={"ANALIZ CASTILLO": 672398, "MELISSA VASQUEZ": 563655, "CRISTIAN HUAMAN": 446673, "ALICIA QUINONES": 463589, "ROSA TORRES": 336432, "OLIVER LOPEZ": 363014, "PATRICIA ASTORGA": 263040, "ROCK LLANOS": 114051, "MELISA LLACCHUAS": 94828, "ANDREA SOTO": 11550, "YASMIN CHECA": 3, "KEVIN PAULINO": 0, "MARIA FLORES": 0};
@@ -1684,13 +1684,13 @@ function bP1(){
   (function(){
     var el=document.getElementById('cSco');if(!el)return;
     var _rs=filterRank(RANK_sorted_abr);
-    var _lmap={"ALICIA QUINONES":"Alicia Q.","MELISSA VASQUEZ":"Melissa V.","MELISA LLACCHUAS":"Melisa Ll.","ROSA TORRES":"Rosa T.","ANDREA SOTO":"Andrea S.","YASMIN CHECA":"Yasmin Ch.","MARIA FLORES":"Maria Fl.","KEVIN PAULINO":"Kevin P.","OLIVER LOPEZ":"Oliver L.","PATRICIA ASTORGA":"Patricia A.","ANALIZ CASTILLO":"Analiz C.","ROCK LLANOS":"Rock Ll.","FRANCO ROUILLON":"Franco R.","CRISTIAN HUAMAN":"Cristian H.","ANA CARRERA":"Ana C."};
+    var _lmap={"ALICIA QUINONES":"Alicia Q.","MELISSA VASQUEZ":"Melissa V.","MELISA LLACCHUAS":"Melisa Ll.","ROSA TORRES":"Rosa T.","ANDREA SOTO":"Andrea S.","YASMIN CHECA":"Yasmin Ch.","MARIA FLORES":"Maria Fl.","KEVIN PAULINO":"Kevin P.","OLIVER LOPEZ":"Oliver L.","PATRICIA ASTORGA":"Patricia A.","ANALIZ CASTILLO":"Analiz C.","ROCK LLANOS":"Rock Ll.","FRANCO ROUILLON":"Franco R.","CRISTIAN HUAMAN":"Cristian H.","ANA CARRERA":"Ana C.","LEONARDO TORRES":"Leonardo T.","JANNIOR SALAZAR":"Jannior S.","GIULIANA HERENA":"Giuliana H."};
     var _scores=_rs.map(function(h){return Math.max(0,RANK_ABR_SCORES[h.n]||0);});
     var _labels=_rs.map(function(h){return _lmap[h.n]||h.ini;});
     var _colors=_rs.map(function(h){var s=RANK_ABR_SCORES[h.n]||0;return s>=150?'rgba(34,197,94,.85)':s>=100?'rgba(245,158,11,.85)':'rgba(239,68,68,.75)';});
     var _plug={id:'scoLbl31',afterDatasetsDraw:function(chart){var ctx=chart.ctx,m=chart.getDatasetMeta(0);ctx.save();m.data.forEach(function(b,i){var v=_scores[i];if(v<=0)return;ctx.fillStyle='#fff';ctx.font='bold 10px sans-serif';ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText(v.toFixed(1)+'%',b.x,b.y-3);});ctx.restore();}};
     CHS['cSco']=new Chart(el,{type:'bar',plugins:[_plug],
-      data:{labels:_labels,datasets:[{label:'Score 2 Junio',data:_scores,backgroundColor:_colors,borderWidth:0,borderRadius:6,categoryPercentage:0.5,barPercentage:0.8,minBarLength:4}]},
+      data:{labels:_labels,datasets:[{label:'Score % meta Julio',data:_scores,backgroundColor:_colors,borderWidth:0,borderRadius:6,categoryPercentage:0.5,barPercentage:0.8,minBarLength:4}]},
       options:{responsive:true,maintainAspectRatio:false,layout:{padding:{top:24}},
         plugins:{legend:{display:false},tooltip:{callbacks:{title:function(ctx){return _rs[ctx[0].dataIndex].n;},label:function(ctx){return 'Score: '+ctx.raw.toFixed(1)+'%';}}}},
         scales:{x:{ticks:{font:{size:11},color:'var(--t2)'},grid:{display:false}},y:{ticks:{callback:function(v){return v+'%';},font:{size:10}},grid:{color:'rgba(0,0,0,.06)'}}}
@@ -1833,8 +1833,9 @@ function bP1(){
   dc('cRucTeam');
   (function(){
     var el=document.getElementById('cRucTeam');if(!el)return;
-    var _rt={id:'rT31',afterDatasetsDraw:function(chart){chart.data.datasets.forEach(function(ds,di){var meta=chart.getDatasetMeta(di);if(meta.hidden)return;meta.data.forEach(function(b,i){var v=ds.data[i];if(v>0){chart.ctx.save();chart.ctx.fillStyle='#fff';chart.ctx.font='bold 11px sans-serif';chart.ctx.textAlign='center';chart.ctx.textBaseline='bottom';chart.ctx.fillText(v,b.x,b.y-2);chart.ctx.restore();}});});}};
-    CHS['cRucTeam']=new Chart(el,{type:'bar',plugins:[_rt],data:{labels:['Junio','Julio','Total'],datasets:[{label:'Head Carlos',data:[_ruc_carlos_may,_ruc_carlos_abr,_ruc_carlos_may+_ruc_carlos_abr],backgroundColor:'rgba(249,115,22,.80)',borderColor:'#F97316',borderWidth:1.5,borderRadius:5},{label:'Head Ana',data:[_ruc_ana_may,_ruc_ana_abr,_ruc_ana_may+_ruc_ana_abr],backgroundColor:'rgba(168,85,247,.80)',borderColor:'#A855F7',borderWidth:1.5,borderRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{font:{size:10},boxWidth:10}}},scales:{x:{ticks:{font:{size:11}},grid:{display:false}},y:{ticks:{stepSize:1,font:{size:9}},grid:{color:'rgba(0,0,0,.06)'}}}}});
+    var _rt={id:'rT31',afterDatasetsDraw:function(chart){chart.data.datasets.forEach(function(ds,di){var meta=chart.getDatasetMeta(di);if(meta.hidden)return;meta.data.forEach(function(b,i){var v=ds.data[i];if(v>0){chart.ctx.save();chart.ctx.fillStyle=ds.borderColor;chart.ctx.font='bold 11px sans-serif';chart.ctx.textAlign='center';chart.ctx.textBaseline='bottom';chart.ctx.fillText(v,b.x,b.y-4);chart.ctx.restore();}});});}};
+    var _f50c=(_t==='ana'?0:29),_f75c=(_t==='ana'?0:17),_f50a=(_t==='carlos'?0:24),_f75a=(_t==='carlos'?0:7);
+    CHS['cRucTeam']=new Chart(el,{type:'bar',plugins:[_rt],data:{labels:['Julio','50% Julio','75% Julio'],datasets:[{label:'Head Carlos',data:[_ruc_carlos_abr,_f50c,_f75c],backgroundColor:'rgba(249,115,22,.80)',borderColor:'#F97316',borderWidth:1.5,borderRadius:5},{label:'Head Ana',data:[_ruc_ana_abr,_f50a,_f75a],backgroundColor:'rgba(168,85,247,.80)',borderColor:'#A855F7',borderWidth:1.5,borderRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{font:{size:10},boxWidth:10}}},scales:{x:{ticks:{font:{size:11}},grid:{display:false}},y:{ticks:{stepSize:1,font:{size:9}},grid:{color:'rgba(0,0,0,.06)'}}}}});
   })();
 
   dc('cRucCumpl');
@@ -1890,9 +1891,9 @@ function bP1(){
   (function(){
     var el=document.getElementById('cArisEstado');if(!el)return;
     var _cAE={id:'cArisEstadoLbl31',afterDatasetsDraw:function(chart){var ctx=chart.ctx,ds=chart.data.datasets[0];var total=ds.data.reduce(function(a,b){return a+b;},0);chart.getDatasetMeta(0).data.forEach(function(arc,i){var v=ds.data[i];if(v<=0)return;var mid=(arc.startAngle+arc.endAngle)/2,r=(arc.outerRadius+arc.innerRadius)/2;var x=arc.x+Math.cos(mid)*r,y=arc.y+Math.sin(mid)*r;var pct=Math.round(v/total*100);ctx.save();ctx.fillStyle='#fff';ctx.font='bold 11px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(v,x,y-6);ctx.fillText('('+pct+'%)',x,y+7);ctx.restore();});}};
-    CHS['cArisEstado']=new Chart(el,{type:'doughnut',plugins:[_cAE],data:{labels:['Con Alta Sunat','Sin Alta Sunat'],datasets:[{data:[8,12],backgroundColor:['rgba(0,229,160,.82)','rgba(239,68,68,.75)'],borderColor:['#00E5A0','#EF4444'],borderWidth:2,hoverOffset:10}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){return ctx.label+': '+ctx.raw+' lic';}}}}}});
+    CHS['cArisEstado']=new Chart(el,{type:'doughnut',plugins:[_cAE],data:{labels:['Con Alta Sunat','Sin Alta Sunat'],datasets:[{data:[40,0],backgroundColor:['rgba(0,229,160,.82)','rgba(239,68,68,.75)'],borderColor:['#00E5A0','#EF4444'],borderWidth:2,hoverOffset:10}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{display:false},tooltip:{callbacks:{label:function(ctx){return ctx.label+': '+ctx.raw+' lic';}}}}}});
     var l=document.getElementById('cArisEstadoLgd'),sp='display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;background:';
-    if(l)l.innerHTML='<span><span style="'+sp+'#00E5A0"></span>Con alta: 8 lic</span>'+'<span style="margin-left:8px"><span style="'+sp+'#EF4444"></span>Sin alta: 12 lic</span>';
+    if(l)l.innerHTML='<span><span style="'+sp+'#00E5A0"></span>Con alta: 40 lic</span>'+'<span style="margin-left:8px"><span style="'+sp+'#EF4444"></span>Sin alta: 0 lic</span>';
   })();
 
   dc('cArisTeam');
